@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Machine Learning for Everyone</title>
+
+    <!-- JavaScript Libraries -->
+    <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="js/notify.js"></script>
+    <script type="text/javascript" src="js/spin.js"></script>
+
+    <!-- Fonts -->
+    <link href="css/roboto.css" rel="stylesheet">
+
+    <script type="text/javascript" src="js/scripts.js"></script>
+    <link href="css/styles.css" rel="stylesheet">
+    <link href="css/spin.css" rel="stylesheet">
+</head>
+<body>
+    <div id="content">
+        <h1 id="title" class="title">Image Classifier Training</h1>
+        <video autoplay playsinline id="videoElement"></video>
+        <div id="controls" class="controls">
+            <select id="tag-selector" class="tag-selector"></select>
+            <div class="bottom-left-corner">
+                <button id="flip-camera-button" class="button flip-button">Flip Camera</button>
+            </div>
+            <div class="bottom-right-corner">
+                <button id="capture-button" class="button capture-button">Capture</button>
+            </div>
+        </div>
+    </div>
+    <span id="loading"></span>
+    <canvas id="canvas" class="hidden-canvas"></canvas>
+</body>
+
+<script>
+        $(document).ready(function() {
+            configureVideo();
+
+            setupUIForMode(mode);
+
+            $("#capture-button").on("click", function(event) {
+                captureButtonPressed();
+            });
+
+            $("#flip-camera-button").on("click", function(event) {
+                flipCameraButtonPressed();
+            });
+        });
+       </script>
+</html>
